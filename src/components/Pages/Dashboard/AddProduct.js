@@ -38,10 +38,11 @@ const AddProduct = () => {
                         price: parseInt(data.price),
                         quantity: parseInt(data.quantity),
                         minOrder: parseInt(data.minOrder),
+                        date: data.date,
                         photo: img
 
                     }
-                    fetch('https://radiant-depths-23183.herokuapp.com/products', {
+                    fetch('http://localhost:5000/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -1,22 +1,17 @@
-import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import React, { useEffect } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
-import { GrFacebook } from 'react-icons/gr';
+import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
-
     const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, userF, loadingF, errorF] = useSignInWithFacebook(auth);
-    ;
 
+    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
     const [
         signInWithEmailAndPassword,
         user,
@@ -24,30 +19,47 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(user || userG)
+
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
+        console.log(data);
     }
-
     let errorMessage;
 
-    if (error || errorG || errorF) {
-        errorMessage = <p className='text-error pb-2'>{error?.message || errorG?.message || errorF.message}</p>
+    if (loading || loadingG || sending) {
+        return <Loading></Loading>
     }
 
-    if (user || userG || userF) {
-        navigate(from, { replace: true });
+    if (error || errorG) {
+        errorMessage = <p className='text-orange-500'>{error?.message || errorG?.message}</p>
     }
 
-    if (loading || loadingG || loadingF) {
-        <Loading></Loading>
+    const handleReset = async (data) => {
+        const email = data.email;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            alert('Sent email');
+        }
+        else {
+            alert('please enter your email address');
+        }
     }
 
     return (
         <div className="hero min-h-screen bg-white">
             <div className="hero-content flex-col md:flex-row-reverse">
-                {/* <img src="https://img.freepik.com/free-vector/computer-login-concept-illustration_114360-7892.jpg?w=2000" className="max-w-sm rounded-lg hidden md:block" alt="" /> */}
                 <div>
                     <div className="card w-80 bg-white border-2 rounded-md border-secondary">
                         <div className="card-body">
@@ -56,9 +68,6 @@ const Login = () => {
                                 <button
                                     onClick={() => signInWithGoogle()}
                                     className="btn btn-outline btn-secondary rounded-sm  w-full"><FcGoogle className='mr-2'></FcGoogle>Google</button>
-                                {/* <button
-                                    onClick={() => signInWithFacebook()}
-                                    className="btn border-white hover:border-white text-black hover:text-blue-600 bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button> */}
                             </div>
                             <div className="divider text-neutral">OR</div>
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -111,9 +120,9 @@ const Login = () => {
 
                                 <div className='flex items-center justify-between'>
                                     <p className='text-start'>
-                                        <Link
-                                            to='/resetpassword'
-                                            className='btn btn-link text-xs text-neutral p-0 m-0'>Forgot password?</Link>
+                                        <button
+                                            onClick={handleReset}
+                                            className='btn btn-link text-xs text-neutral p-0 m-0'>Forgot password?</button>
                                     </p>
                                 </div>
                                 <input className='btn btn-secondary btn-outline rounded-sm btn-md w-full test-white' type="submit" value='Login' />

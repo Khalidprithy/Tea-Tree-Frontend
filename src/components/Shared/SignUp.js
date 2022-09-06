@@ -6,6 +6,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { GrFacebook } from 'react-icons/gr';
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
+import useToken from '../../hooks/useToken';
 
 
 const SignUp = () => {
@@ -26,6 +27,7 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
+    const [token] = useToken(user || userG);
 
     const onSubmit = async data => {
         createUserWithEmailAndPassword(data.email, data.password);
@@ -34,7 +36,7 @@ const SignUp = () => {
 
     let errorMessage;
 
-    if (user || userG) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -49,7 +51,7 @@ const SignUp = () => {
     return (
         <div className="hero min-h-screen bg-base-100">
             <div className="hero-content flex-col md:flex-row">
-                {/* <img src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2745.jpg?w=2000" className="max-w-sm rounded-lg hidden md:block" alt="" /> */}
+
                 <div>
                     <div className="card w-80 border-2 rounded-md border-secondary">
                         <div className="card-body">

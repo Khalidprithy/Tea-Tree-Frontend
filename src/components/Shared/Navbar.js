@@ -77,7 +77,9 @@ const Navbar = () => {
                                     <li>
                                         <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
                                     </li>
-                                    <li className='justify-between text-white text-xl'><Link to='/myOrders'>My Orders</Link></li>
+                                    <li >
+                                        <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
+                                    </li>
                                     <li>
                                         <button
                                             onClick={handleSignOut}

@@ -56,26 +56,26 @@ const MyReviews = () => {
 
     return (
         <div className='pt-10'>
-            <h1 className='text-xl font-semibold text-center pb-4'>Please give us your valuable feedback of <span className='text-secondary'>{product.name}</span></h1>
+            <h1 className='text-xl font-semibold text-center pb-4 px-4'>Please give us your valuable feedback of <span className='text-secondary'>{product.name}</span></h1>
             <div className='flex justify-center items-center min-h-screen'>
                 <form onSubmit={handleReview}>
-                    <div className="card md:card-side max-w-lg bg-base-100 shadow-xl">
-                        <figure><img className='w-64' src={photo} alt="Shoes" /></figure>
+                    <div className="card md:card-side p-2 max-w-lg border border-secondary">
+                        <figure><img className='w-64 rounded-lg' src={photo} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{name}</h2>
                             <p>{description}</p>
                             <p>Price: ${product.price}</p>
                             <input type="text" name='userName' value={user?.displayName} className="input input-sm input-bordered mb-2 w-full max-w-lg" readOnly />
                             <input type="email" name='email' value={user?.email} className="input input-sm input-bordered mb-2 w-full max-w-lg" readOnly />
-                            <textarea type="text" name='review' placeholder='Enter your review' className="input outline focus:outline-secondary mb-2 w-full max-w-lg" />
+                            <textarea type="text" name='review' placeholder='Enter your review' className="input outline focus:outline-secondary mb-2 w-full max-w-lg h-24" />
                             <div className="rating">
+                                <input type="radio" name="rating-1" className="mask mask-star" />
+                                <input type="radio" name="rating-1" className="mask mask-star" />
                                 <input type="radio" name="rating-1" className="mask mask-star" />
                                 <input type="radio" name="rating-1" className="mask mask-star" checked />
                                 <input type="radio" name="rating-1" className="mask mask-star" />
-                                <input type="radio" name="rating-1" className="mask mask-star" />
-                                <input type="radio" name="rating-1" className="mask mask-star" />
                             </div>
-                            <input type="submit" value='Add Review' className='btn btn-outline rounded-sm w-full max-w-lg' />
+                            <input type="submit" value='Add Review' className='btn btn-outline btn-sm rounded-sm w-full max-w-lg' />
                         </div>
                     </div>
                 </form>
