@@ -29,15 +29,15 @@ const Contact = () => {
                 </div>
                 <div className='flex flex-col gap-4 pl-8'>
                     <div className='flex items-center gap-2'>
-                        <FiPhoneCall></FiPhoneCall>
+                        <FiPhoneCall className='text-blue-400'></FiPhoneCall>
                         <p>01455321487</p>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <MdEmail></MdEmail>
+                        <MdEmail className='text-secondary'></MdEmail>
                         <p>khalidprithy@gmail.com</p>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <MdLocationPin></MdLocationPin>
+                        <MdLocationPin className='text-orange-400'></MdLocationPin>
                         <p>Mohammodpur, Dhaka</p>
                     </div>
                 </div>
