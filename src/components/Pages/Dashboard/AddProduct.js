@@ -69,7 +69,7 @@ const AddProduct = () => {
 
     return (
 
-        <div>
+        <div className='bg-white'>
             <div className='flex items-center justify-between border rounded-2xl mx-6 outline outline-secondary mb-6'>
                 <div className="tooltip tooltip-secondary" data-tip="Home">
                     <Link to='/'

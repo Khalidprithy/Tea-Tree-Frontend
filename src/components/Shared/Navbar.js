@@ -29,7 +29,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div>
+        <div className='bg-white pb-6'>
             <div className="navbar bg-white">
                 <div className="navbar-start flex-1">
                     <div className="dropdown">
@@ -92,7 +92,7 @@ const Navbar = () => {
                                             <li ><Link className='justify-between text-white text-xl' to='/manageOrder'>Manage Orders</Link></li>
                                         </>
                                     }
-                                    <li className='mb-2'>
+                                    <li className=''>
                                         <button
                                             onClick={handleSignOut}
                                             className='btn btn-sm btn-outline rounded-sm pb-2 mx-auto'>Sign out </button>

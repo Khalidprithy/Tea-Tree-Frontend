@@ -7,8 +7,8 @@ const AllProducts = () => {
     const [products] = useProducts();
 
     return (
-        <div className='m-2'>
-            <h1 className='text-2xl font-bold m-2'>All Products</h1>
+        <div className=' bg-white'>
+            <h1 className='text-2xl font-bold p-2'>All Products</h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
