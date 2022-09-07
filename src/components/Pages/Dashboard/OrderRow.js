@@ -30,7 +30,7 @@ const OrderRow = ({ order, index, refetch, setDeleteProduct }) => {
             <th >
                 <label
                     onClick={() => setDeleteProduct(order)}
-                    for="confirm-delete" className="tooltip tooltip-error" data-tip="Delete"><AiFillDelete className='text-red-500'></AiFillDelete></label>
+                    for="confirm-delete" className="tooltip tooltip-error" data-tip="Delete"><AiFillDelete className='text-error text-xl'></AiFillDelete></label>
             </th>
             <th>
                 {(!order.paid) ? <Link to={`/payment/${order._id}`}><button className='btn btn-sm btn-outline btn-secondary rounded-sm'>Pay Now</button></Link> : <div>

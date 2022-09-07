@@ -8,7 +8,7 @@ const NewProduct = () => {
         <div className='bg-white pt-10'>
             <h1 className='text-2xl md:text-4xl text-black text-center font-semibold'>Exclusive Products</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mx-6 mt-6'>
-                <div className="card card-side border rounded-md">
+                <div className="card card-side border rounded-md outline outline-1 hover:outline-secondary transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300">
                     <figure><img className='w-40 p-2' src={img0} alt="Movie" /></figure>
                     <div className="flex flex-col justify-between">
                         <h2 className="card-title mt-6">Wild Berry</h2>
@@ -22,7 +22,7 @@ const NewProduct = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-side border rounded-md">
+                <div className="card card-side border rounded-md outline outline-1 hover:outline-secondary transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300">
                     <figure><img className='w-36 p-2' src={img1} alt="Movie" /></figure>
                     <div className="flex flex-col justify-between">
                         <h2 className="card-title mt-6">White Peach</h2>
@@ -36,7 +36,7 @@ const NewProduct = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-side border rounded-md">
+                <div className="card card-side border rounded-md outline outline-1 hover:outline-secondary transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300">
                     <figure><img className='w-36 p-2' src={img2} alt="Movie" /></figure>
                     <div className="flex flex-col justify-between">
                         <h2 className="card-title mt-6">Easy Green</h2>

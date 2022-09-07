@@ -21,7 +21,7 @@ const ShowProduct = ({ product }) => {
                 <p className='text-xs p-1'>{product.description}</p>
                 <div className='flex flex-row gap-2 text-xs p-1'>
                     <p><span className='font-bold'>Price: $</span>{product.price}</p>
-                    <p><span className='font-bold'>Min Quantity: </span>{product.price}</p>
+                    <p><span className='font-bold'>Min Quantity: </span>{product.minOrder}</p>
                 </div>
                 <div className="card-actions justify-center">
                     <button
