@@ -13,9 +13,9 @@ const AboutPage = () => {
                 </div>
             </div>
             <div>
-                <h1 className='text-2xl text-center font-semibold'>Our Company Summary </h1>
+                <h1 className='text-2xl text-center font-semibold mt-4'>Company Summary and Accomplishment</h1>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-1 m-4'>
-                    <div className="card w-72 bg-base-100 shadow-xl mx-auto">
+                    <div className="card w-72 bg-base-100 rounded-xl border mx-auto">
                         <figure className="px-10 pt-10">
                             <img src="https://web.ineons.com/sites/default/files/storage/product_images/tra_nong.jpg" alt="Shoes" className="mask mask-hexagon-2" />
                         </figure>
@@ -24,7 +24,7 @@ const AboutPage = () => {
                             <p className='text-sm'>Trust and loyalty are the main reasons why a customer would choose to recommend your company to a friend or family member or write a great review of your product or service online </p>
                         </div>
                     </div>
-                    <div className="card w-72 bg-base-100 shadow-xl mx-auto">
+                    <div className="card w-72 bg-base-100 rounded-xl border mx-auto">
                         <figure className="px-10 pt-10">
                             <img src="https://images.iphonephotographyschool.com/23080/1120/food.jpg" alt="Shoes" className="mask mask-hexagon-2" />
                         </figure>
@@ -33,7 +33,7 @@ const AboutPage = () => {
                             <p className='text-sm'>20 + employees for customer support and help. You can message a person or group in Google Chat the same way you do in classic</p>
                         </div>
                     </div>
-                    <div className="card w-72 bg-base-100 shadow-xl mx-auto">
+                    <div className="card w-72 bg-base-100 rounded-xl border mx-auto">
                         <figure className="px-10 pt-10">
                             <img src="https://images.immediate.co.uk/production/volatile/sites/30/2022/01/Massala-Chai-1741f01.jpg" alt="Shoes" className="mask mask-hexagon-2 w-52" />
                         </figure>
