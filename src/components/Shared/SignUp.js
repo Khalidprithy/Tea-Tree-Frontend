@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
 import { FcGoogle } from 'react-icons/fc';
-import { GrFacebook } from 'react-icons/gr';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
 

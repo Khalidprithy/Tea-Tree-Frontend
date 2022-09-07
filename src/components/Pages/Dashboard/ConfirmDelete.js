@@ -27,12 +27,12 @@ const ConfirmDelete = ({ deleteProduct, refetch, setDeleteProduct }) => {
             <input type="checkbox" id="confirm-delete" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg text-red-500">Confirm delete product:  {name}</h3>
+                    <h3 className="font-bold text-lg text-error">Confirm delete product:  {name}</h3>
                     <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
                     <div className="modal-action">
                         <button
                             onClick={() => handleDelete()}
-                            className="btn btn-xs bg-red-500" >Delete</button>
+                            className="btn btn-xs bg-error" >Delete</button>
                         <label for="confirm-delete" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>

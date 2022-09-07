@@ -42,8 +42,8 @@ const Login = () => {
         return <Loading></Loading>
     }
 
-    if (error || errorG) {
-        errorMessage = <p className='text-orange-500'>{error?.message || errorG?.message}</p>
+    if (error || errorG || resetError) {
+        errorMessage = <p className='text-error'>{error?.message || errorG?.message}</p>
     }
 
     const handleReset = async (data) => {
@@ -74,7 +74,6 @@ const Login = () => {
                                 <div className="form-control w-full max-w-xs">
                                     <input
                                         type="email"
-                                        name="email"
                                         placeholder="Your Email"
                                         className="input input-bordered w-full max-w-xs focus:outline-secondary"
                                         {...register("email", {

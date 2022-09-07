@@ -40,7 +40,6 @@ const MyOrder = () => {
                             <th>Name</th>
                             <th>Address/Email</th>
                             <th>Quantity</th>
-                            <th>Brand</th>
                             <th>Action</th>
                             <th>Payment</th>
                         </tr>

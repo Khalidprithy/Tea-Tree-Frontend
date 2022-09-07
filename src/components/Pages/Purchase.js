@@ -66,8 +66,8 @@ const Purchase = () => {
     }
 
     return (
-        <div>
-            <div className='flex items-center justify-between border rounded-2xl mx-6 outline outline-secondary mb-6 mt-4'>
+        <div className='bg-white pt-4'>
+            <div className='flex items-center justify-between border rounded-2xl mx-6 outline outline-secondary mb-6'>
                 <div className="tooltip tooltip-secondary" data-tip="Go Back">
                     <button
                         onClick={handleGoBack}
@@ -78,7 +78,7 @@ const Purchase = () => {
             <div>
                 <div className="hero min-h-screen">
                     <div className="hero-content flex-col md:flex-row">
-                        <img className='w-64 md:w-72 lg:w-96 rounded-lg' src={product.photo} alt='' />
+                        <img className='w-64 md:w-72 lg:w-80 rounded-lg' src={product.photo} alt='' />
                         <div className='card-body'>
                             <form onSubmit={handlePurchase}>
                                 <h1 className="text-2xl font-bold">{product.name}</h1>

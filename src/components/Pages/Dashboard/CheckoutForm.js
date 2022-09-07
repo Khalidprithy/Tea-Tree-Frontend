@@ -118,12 +118,12 @@ const CheckoutForm = ({ payment }) => {
                 Pay Now
             </button>
             {
-                cardError && <p className='text-red-500'>{cardError}</p>
+                cardError && <p className='text-error'>{cardError}</p>
             }
             {
                 success && <div className='text-green-500'>
                     <p>{success} </p>
-                    <p>Your transaction ID: <span className='text-orange-500 font-bold'>{transactionId}</span></p>
+                    <p>Your transaction ID: <span className='text-error font-bold'>{transactionId}</span></p>
                 </div>
             }
         </form>

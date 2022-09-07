@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const MyReviews = () => {
     const navigate = useNavigate();
@@ -44,13 +44,13 @@ const MyReviews = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.success) {
-                    toast.success('Review added Successful')
+                if (data.insertedId) {
+                    toast.success('Thank you for your feedback')
                 }
                 else {
-
+                    toast.error('Can not add review')
                 }
-                navigate('/')
+                navigate('/review')
             })
     }
 
@@ -80,6 +80,7 @@ const MyReviews = () => {
                     </div>
                 </form>
             </div>
+            <Toaster></Toaster>
         </div>
 
 

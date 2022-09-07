@@ -24,7 +24,8 @@ const Navbar = () => {
     const menuItems = <>
         <li className='font-semibold text-neutral text-xl'><Link to='/'>Home</Link></li>
         <li className='font-semibold text-neutral text-xl'><Link to='/products'>Product</Link></li>
-        <li className='font-semibold text-neutral text-xl'><Link to='/purchases'>About</Link></li>
+        <li className='font-semibold text-neutral text-xl'><Link to='/review'>Review</Link></li>
+        <li className='font-semibold text-neutral text-xl'><Link to='/about'>About</Link></li>
     </>
 
     return (
@@ -74,12 +75,23 @@ const Navbar = () => {
                                     <li>
                                         <Link to='/myItems' className="justify-between text-white text-xl">My Items</Link>
                                     </li>
-                                    <li>
-                                        <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
-                                    </li>
-                                    <li >
-                                        <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
-                                    </li>
+                                    {
+                                        (user && !admin) && <>
+                                            <li>
+                                                <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
+                                            </li>
+                                            <li >
+                                                <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
+                                            </li>
+                                        </>
+                                    }
+                                    {
+                                        (admin) && <>
+                                            <li ><Link className='justify-between text-white text-xl' to='/users'>Manage User</Link></li>
+                                            <li ><Link className='justify-between text-white text-xl' to='/addProduct'>Add Product</Link></li>
+                                            <li ><Link className='justify-between text-white text-xl' to='/manageOrder'>Manage Orders</Link></li>
+                                        </>
+                                    }
                                     <li>
                                         <button
                                             onClick={handleSignOut}
