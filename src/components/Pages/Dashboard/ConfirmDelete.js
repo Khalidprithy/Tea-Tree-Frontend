@@ -26,7 +26,7 @@ const ConfirmDelete = ({ deleteProduct, refetch, setDeleteProduct }) => {
         <div>
             <input type="checkbox" id="confirm-delete" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
+                <div className="modal-box rounded-md">
                     <h3 className="font-bold text-lg"><span className='text-error'>Confirm delete product:</span> <span className='text-secondary'>{name}</span></h3>
                     <p className="py-4">You are deleting a order from your orders. Are you sure you want to cancel this order?</p>
                     <div className="modal-action">
