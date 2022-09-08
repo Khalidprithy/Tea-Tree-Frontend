@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
+import toast from 'react-hot-toast';
 
 
 const SignUp = () => {
@@ -14,6 +15,7 @@ const SignUp = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const [agree, setAgree] = useState(false);
+    let errorMessage;
 
 
     const [signInWithGoogle, userG, loadingG, errorG] = useSignInWithGoogle(auth);
@@ -29,18 +31,18 @@ const SignUp = () => {
     const [token] = useToken(user || userG);
 
     const onSubmit = async data => {
-        createUserWithEmailAndPassword(data.email, data.password);
+        await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name })
+        toast.success(`Welcome to TeaTree`)
     }
 
-    let errorMessage;
 
     if (token) {
         navigate(from, { replace: true });
     }
 
     if (error || errorG || updateError) {
-        errorMessage = <p className='text-orange-500'>{error?.message || errorG?.message || updateError?.message}</p>
+        errorMessage = <p className='text-error'>{error?.message || errorG?.message || updateError?.message}</p>
     }
 
     if (loading || loadingG || updating) {

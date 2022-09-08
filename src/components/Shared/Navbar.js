@@ -13,12 +13,13 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         signOut(auth)
-            .then(() => {
-                setUser({})
-            })
-            .catch(error => {
-                setUser({});
-            })
+        localStorage.removeItem('accessToken')
+        // .then(() => {
+        //     setUser({})
+        // })
+        // .catch(error => {
+        //     setUser({});
+        // })
     }
 
     const menuItems = <>
@@ -51,7 +52,7 @@ const Navbar = () => {
                     {
                         user ?
                             <div className="dropdown dropdown-end">
-                                <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+                                <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         {
                                             user.photoURL ?
@@ -61,7 +62,7 @@ const Navbar = () => {
                                         }
                                     </div>
                                 </label>
-                                <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
+                                <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
                                     <li>
                                         <Link to='/profile' className="justify-between text-white">
                                             {
@@ -77,9 +78,6 @@ const Navbar = () => {
                                     </li>
                                     {
                                         (user && !admin) && <>
-                                            <li>
-                                                <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
-                                            </li>
                                             <li >
                                                 <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
                                             </li>
@@ -87,8 +85,13 @@ const Navbar = () => {
                                     }
                                     {
                                         (admin) && <>
+                                            <li>
+                                                <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
+                                            </li>
+                                            <li >
+                                                <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
+                                            </li>
                                             <li ><Link className='justify-between text-white text-xl' to='/users'>Manage User</Link></li>
-                                            <li ><Link className='justify-between text-white text-xl' to='/addProduct'>Add Product</Link></li>
                                             <li ><Link className='justify-between text-white text-xl' to='/manageOrder'>Manage Orders</Link></li>
                                         </>
                                     }

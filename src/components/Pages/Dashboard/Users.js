@@ -16,15 +16,16 @@ const Users = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
+        <div className='bg-white'>
+            <h1 className='text-xl font-bold text-center py-6'>Manage All Users</h1>
+            <div className="overflow-x-auto mx-10">
+                <table className="table w-full mb-10">
                     <thead>
                         <tr>
                             <th></th>
                             <th>User</th>
-                            <th>Add</th>
-                            <th>Delete</th>
+                            <th>Role</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,3 +45,4 @@ const Users = () => {
 };
 
 export default Users;
+

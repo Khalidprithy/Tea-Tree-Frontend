@@ -21,6 +21,7 @@ import MangeOrder from './components/Pages/Dashboard/ManageOrder';
 import Payment from './components/Pages/Dashboard/Payment'
 import Reviews from './components/Pages/Reviews';
 import AboutPage from './components/Pages/AboutPage';
+import Blog from './components/Pages/Blog';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         } ></Route>
         <Route path='/purchase' element={<Purchase></Purchase>}></Route>
         <Route path='/review' element={<Reviews></Reviews>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/login' element={<Login></Login>} />
         <Route path='/signup' element={<SignUp></SignUp>} />
         {/* <Route path='/resetpassword' element={<ResetPassword></ResetPassword>} /> */}
@@ -61,7 +63,7 @@ function App() {
             <Profile></Profile>
           </RequireAuth>} />
         <Route path='payment/:id' element={<Payment></Payment>}></Route>
-        <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+        <Route path='/users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         <Route path='manageOrder' element={<RequireAdmin><MangeOrder></MangeOrder></RequireAdmin>}></Route>
 
         <Route path='*' element={<NotFound></NotFound>}></Route>

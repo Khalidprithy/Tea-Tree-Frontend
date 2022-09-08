@@ -30,8 +30,15 @@ const User = ({ user, refetch, index }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={handleAdmin} className="btn btn-xs">Make Admin</button>}</td>
-            <td><button className="btn btn-xs">Remove User</button></td>
+            <td><span className='text-secondary font-semibold uppercase'>{role}</span></td>
+            <td className='flex gap-2'>
+                <div>
+                    {role !== 'admin' && <button onClick={handleAdmin} className="btn btn-xs btn-outline btn-secondary rounded-sm">Make Admin</button>}
+                </div>
+                <div>
+                    <button className="btn btn-xs btn-outline btn-error rounded-sm ">Remove User</button>
+                </div>
+            </td>
         </tr>
     );
 };

@@ -114,7 +114,7 @@ const CheckoutForm = ({ payment }) => {
                     },
                 }}
             />
-            <button className='btn btn-xs mt-4 bg-teal-700' type="submit" disabled={!stripe || !clientSecret}>
+            <button className='btn btn-xs mt-4 btn-outline btn-secondary rounded-sm' type="submit" disabled={!stripe || !clientSecret}>
                 Pay Now
             </button>
             {
