@@ -11,7 +11,7 @@ const MyReviews = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://immense-savannah-21225.herokuapp.com/products/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -34,7 +34,7 @@ const MyReviews = () => {
             review: event.target.review.value,
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://immense-savannah-21225.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

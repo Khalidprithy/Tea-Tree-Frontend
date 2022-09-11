@@ -13,7 +13,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/purchase?email=${user.email}`, {
+            fetch(`https://immense-savannah-21225.herokuapp.com/purchase?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

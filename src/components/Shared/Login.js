@@ -117,6 +117,7 @@ const Login = () => {
 
                                 {errorMessage}
 
+                                <input className='btn btn-secondary btn-outline rounded-sm btn-md w-full test-white' type="submit" value='Login' />
                                 <div className='flex items-center justify-between'>
                                     <p className='text-start'>
                                         <button
@@ -124,7 +125,6 @@ const Login = () => {
                                             className='btn btn-link text-xs text-neutral p-0 m-0'>Forgot password?</button>
                                     </p>
                                 </div>
-                                <input className='btn btn-secondary btn-outline rounded-sm btn-md w-full test-white' type="submit" value='Login' />
                             </form>
                             <div className='flex justify-center items-center'>
                                 <p className='text-neutral text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-secondary' to='/signup'>Sign Up</Link> </p>

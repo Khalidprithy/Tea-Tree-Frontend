@@ -4,7 +4,7 @@ const useClients = () => {
     const [clients, setClients] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/clients')
+        fetch('https://immense-savannah-21225.herokuapp.com/clients')
             .then(res => res.json())
             .then(data => setClients(data))
     }, [])
