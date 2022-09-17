@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
+import toast from 'react-hot-toast';
 
 
 const Login = () => {
@@ -50,7 +51,7 @@ const Login = () => {
         const email = data.email;
         if (email) {
             await sendPasswordResetEmail(email);
-            alert('Sent email');
+            toast.success('Sent email');
         }
         else {
             alert('please enter your email address');

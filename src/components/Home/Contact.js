@@ -46,10 +46,10 @@ const Contact = () => {
                 <div className="p-4 mt-4">
                     <form ref={form} onSubmit={sendEmail}>
                         <div className='flex my-2'>
-                            <input className='rounded-md py-1 px-3 w-full md:w-1/2' placeholder='Name' type="text" name="user_name" required autocomplete="off" />
+                            <input className='rounded-md py-1 px-3 w-full md:w-1/2' placeholder='Name' type="text" name="user_name" required autoComplete="off" />
                         </div>
                         <div className='flex my-2'>
-                            <input className='rounded-md px-3 py-1 w-full md:w-1/2' placeholder='Email' type="email" name="user_email" required autocomplete="off" />
+                            <input className='rounded-md px-3 py-1 w-full md:w-1/2' placeholder='Email' type="email" name="user_email" required autoComplete="off" />
                         </div>
                         <div className='flex flex-col my-2'>
                             <textarea className='rounded-md px-3 mt-1 h-24' placeholder='Message' name="message" />

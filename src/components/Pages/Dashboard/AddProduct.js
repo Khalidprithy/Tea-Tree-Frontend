@@ -55,11 +55,15 @@ const AddProduct = () => {
                         .then(res => res.json())
                         .then(added => {
                             if (added.insertedId) {
-                                toast.success('Successfully added new product');
+                                toast.success('Successfully added new product', {
+                                    icon: '😍',
+                                });
                                 reset();
                             }
                             else {
-                                toast.error('Failed to add product')
+                                toast.error('Failed to add product', {
+                                    icon: '🥺',
+                                })
                             }
                         })
                 }
@@ -88,11 +92,11 @@ const AddProduct = () => {
                             <div className='flex flex-col md:flex-row items-center justify-around '>
                                 <div className='flex flex-col'>
                                     <label className='text-left ml-1 mb-2 font-semibold'>User Name</label>
-                                    <input className='mb-3 p-2 rounded-md border' value={user?.displayName} {...register("name", { required: true })} readOnly />
+                                    <input className='mb-3 p-2 rounded-md border' defaultValue={user?.displayName} {...register("name", { required: true })} readOnly />
                                 </div>
                                 <div className='flex flex-col'>
                                     <label className='text-left ml-1 mb-2 font-semibold'>User Email</label>
-                                    <input className='mb-3 p-2 rounded-md border' value={user?.email} {...register("email", { required: true })} readOnly />
+                                    <input className='mb-3 p-2 rounded-md border' defaultValue={user?.email} {...register("email", { required: true })} readOnly />
                                 </div>
                             </div>
 

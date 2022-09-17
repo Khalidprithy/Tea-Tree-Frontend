@@ -21,7 +21,7 @@ const Products = () => {
                     ><BsFillArrowRightCircleFill className='text-4xl text-secondary mx-10'></BsFillArrowRightCircleFill></button>
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-4 gap-4 mx-6'>
+            <div id='product' className='grid grid-cols-1 md:grid-cols-4 gap-4 mx-6'>
                 {
                     products.slice(0, 8).map(product => <ShowProduct
                         key={product._id}

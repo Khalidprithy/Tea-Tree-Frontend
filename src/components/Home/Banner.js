@@ -13,7 +13,9 @@ const Banner = () => {
                     <p className='mt-2 text-sm text-gray-500'>The steaming process creates a unique flavor profile that can be described as sweet, vegetal or seaweed-like. The Japanese style of green tea is characterized by steaming</p>
                     <div className='flex justify-start gap-4 mt-4'>
                         <button className='btn btn-md btn-outline rounded-sm'>Explore more</button>
-                        <button className='btn btn-secondary rounded-sm'>Buy Now</button>
+                        <a
+                            href='#product'
+                            className='btn btn-secondary rounded-sm'>Buy Now</a>
                     </div>
                     <div className='flex items-center mt-6'>
                         <button><SiGooglechat className='text-3xl text-secondary m-2'></SiGooglechat></button>

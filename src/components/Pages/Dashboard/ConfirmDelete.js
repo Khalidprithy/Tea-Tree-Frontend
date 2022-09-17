@@ -15,7 +15,9 @@ const ConfirmDelete = ({ deleteProduct, refetch, setDeleteProduct }) => {
             .then(data => {
                 console.log(data)
                 if (data.deletedCount) {
-                    toast.success(`Order ${name} is deleted`)
+                    toast.success(`Order ${name} is deleted`, {
+                        icon: '❎',
+                    })
                     setDeleteProduct(null);
                     refetch();
                 }
@@ -33,7 +35,7 @@ const ConfirmDelete = ({ deleteProduct, refetch, setDeleteProduct }) => {
                         <button
                             onClick={() => handleDelete()}
                             className="btn btn-xs btn-outline bg-error rounded-sm text-white hover:bg-red-700" >Delete</button>
-                        <label for="confirm-delete" className="btn btn-xs btn-outline rounded-sm">Cancel</label>
+                        <label htmlFor="confirm-delete" className="btn btn-xs btn-outline rounded-sm">Cancel</label>
                     </div>
                 </div>
             </div>

@@ -13,14 +13,18 @@ const User = ({ user, refetch, index }) => {
         })
             .then(res => {
                 if (res.status === 403) {
-                    toast.error('Failed to Make an admin');
+                    toast.error('Failed to Make an admin', {
+                        icon: '🤷‍♂️',
+                    });
                 }
                 return res.json()
             })
             .then(data => {
                 if (data.modifiedCount > 0) {
                     refetch();
-                    toast.success(`Successfully made an admin`);
+                    toast.success(`Successfully made an admin`, {
+                        icon: '😃',
+                    });
                 }
 
             })

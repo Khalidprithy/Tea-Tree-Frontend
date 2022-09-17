@@ -45,10 +45,14 @@ const MyReviews = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    toast.success('Thank you for your feedback')
+                    toast.success('Thank you for your feedback', {
+                        icon: '😍',
+                    })
                 }
                 else {
-                    toast.error('Can not add review')
+                    toast.error('Can not add review', {
+                        icon: '🚫',
+                    })
                 }
                 navigate('/review')
             })
@@ -67,7 +71,7 @@ const MyReviews = () => {
                             <p>Price: ${product.price}</p>
                             <input type="text" name='userName' value={user?.displayName} className="input input-sm input-bordered mb-2 w-full max-w-lg" readOnly />
                             <input type="email" name='email' value={user?.email} className="input input-sm input-bordered mb-2 w-full max-w-lg" readOnly />
-                            <textarea type="text" name='review' placeholder='Enter your review' className="input outline focus:outline-secondary mb-2 w-full max-w-lg h-24" />
+                            <textarea type="text" name='review' placeholder='Enter your review' className="input outline focus:outline-secondary mb-2 w-full max-w-lg h-24" required />
                             <div className="rating">
                                 <input type="radio" name="rating-1" className="mask mask-star" />
                                 <input type="radio" name="rating-1" className="mask mask-star" />
