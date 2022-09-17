@@ -8,7 +8,7 @@ const NewProduct = () => {
 
 
     const handleToast = () => {
-        toast.error('Thank you for your response', {
+        toast.success('Thank you for your response', {
             icon: '😍',
         })
     }
