@@ -22,39 +22,39 @@ const Contact = () => {
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 bg-white pt-10'>
-            <div className='bg-white pb-6'>
+            <div className='bg-white pb-6 w-11/12 lg:w-8/12 mx-auto'>
                 <div className='p-10'>
-                    <h1 className='text-2xl font-semibold'>Let's get in touch</h1>
-                    <p>We'er open for any suggestions or just to have a chat.</p>
+                    <h1 className='text-2xl lg:text-6xl font-semibold'>Let's get in touch</h1>
+                    <p className='text-base lg:text-2xl p-2'>We'er open for any suggestions or just to have a chat.</p>
                 </div>
                 <div className='flex flex-col gap-4 pl-8'>
                     <div className='flex items-center gap-2'>
-                        <FiPhoneCall className='text-blue-400'></FiPhoneCall>
-                        <p>01455321487</p>
+                        <FiPhoneCall className='text-blue-400 text-2xl'></FiPhoneCall>
+                        <p className='text-2xl'>01455321487</p>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <MdEmail className='text-secondary'></MdEmail>
-                        <p>khalidprithy@gmail.com</p>
+                        <MdEmail className='text-secondary text-2xl'></MdEmail>
+                        <p className='text-2xl'>khalidprithy@gmail.com</p>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <MdLocationPin className='text-orange-400'></MdLocationPin>
-                        <p>Mohammodpur, Dhaka</p>
+                        <MdLocationPin className='text-orange-400 text-2xl'></MdLocationPin>
+                        <p className='text-2xl'>Mohammodpur, Dhaka</p>
                     </div>
                 </div>
             </div>
-            <div className='bg-secondary'>
+            <div className='bg-secondary w-11/12 lg:w-8/12 mx-auto rounded-lg m-4'>
                 <div className="p-4 mt-4">
                     <form ref={form} onSubmit={sendEmail}>
                         <div className='flex my-2'>
-                            <input className='rounded-md py-1 px-3 w-full md:w-1/2' placeholder='Name' type="text" name="user_name" required autoComplete="off" />
+                            <input className='h-12 lg:h-14 rounded-md py-1 px-3 w-full md:w-1/2' placeholder='Name' type="text" name="user_name" required autoComplete="off" />
                         </div>
                         <div className='flex my-2'>
-                            <input className='rounded-md px-3 py-1 w-full md:w-1/2' placeholder='Email' type="email" name="user_email" required autoComplete="off" />
+                            <input className='h-12 lg:h-14 rounded-md px-3 py-1 w-full md:w-1/2' placeholder='Email' type="email" name="user_email" required autoComplete="off" />
                         </div>
                         <div className='flex flex-col my-2'>
                             <textarea className='rounded-md px-3 mt-1 h-24' placeholder='Message' name="message" />
                         </div>
-                        <input className='btn btn-sm btn-outline text-white rounded-sm mb-2 w-24' type="submit" value="Send" />
+                        <input className='btn btn-sm lg:btn-lg btn-outline text-white rounded-lg mb-2' type="submit" value="Send message" />
                     </form>
                 </div>
             </div>
