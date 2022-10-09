@@ -14,7 +14,7 @@ const ShowProduct = ({ product }) => {
     }
 
     return (
-        <div className="card card-compact h-full bg-white outline-none hover:outline-secondary shadow-none hover:shadow-xl rounded-md">
+        <div className="card card-compact h-full bg-white outline-none hover:outline-secondary shadow-none hover:shadow-xl rounded-md py-2">
             <figure><img className='w-40 md:w-64' src={product.photo} alt="Shoes" /></figure>
             <div className="flex flex-col items-center">
                 <h2 className="text-xl lg:text-4xl font-bold">{product.name}</h2>
