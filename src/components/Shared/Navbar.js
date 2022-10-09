@@ -23,10 +23,10 @@ const Navbar = () => {
     }
 
     const menuItems = <>
-        <li className='font-semibold text-neutral text-xl'><Link to='/'>Home</Link></li>
-        <li className='font-semibold text-neutral text-xl'><Link to='/products'>Product</Link></li>
-        <li className='font-semibold text-neutral text-xl'><Link to='/review'>Review</Link></li>
-        <li className='font-semibold text-neutral text-xl'><Link to='/about'>About</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/'>Home</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/products'>Product</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/review'>Review</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/about'>About</Link></li>
     </>
 
     return (
@@ -41,7 +41,7 @@ const Navbar = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl text-secondary"><img className='w-32' src={logo1} alt="" /></Link>
+                    <Link to='/' className="p-2 ml-2 lg:ml-6 normal-case text-xl text-secondary"><img className='w-32 md:w-44 lg:w-56' src={logo1} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden md:flex lg:flex-auto">
                     <ul className="menu menu-horizontal p-0 md:pr-8">
@@ -53,7 +53,7 @@ const Navbar = () => {
                         user ?
                             <div className="dropdown dropdown-end">
                                 <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
+                                    <div className="rounded-full w-24">
                                         {
                                             user.photoURL ?
                                                 <img src={user?.photoURL} alt='' />
@@ -62,48 +62,49 @@ const Navbar = () => {
                                         }
                                     </div>
                                 </label>
-                                <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
+                                <ul tabIndex="0" className="menu menu-normal dropdown-content mt-3 p-2 lg:p-4 shadow bg-secondary rounded-box w-52 lg:w-64">
                                     <li>
                                         <Link to='/profile' className="justify-between text-white">
                                             {
                                                 user.displayName ?
-                                                    <p className='text-xl'>{user?.displayName}</p>
+                                                    <p className='text-xl lg:text-2xl'>{user?.displayName}</p>
                                                     :
                                                     <p>Profile</p>
                                             }
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to='/myItems' className="justify-between text-white text-xl">My Items</Link>
+                                        <Link to='/myItems' className="justify-between text-white text-xl lg:text-2xl">My Items</Link>
                                     </li>
                                     {
                                         (user && !admin) && <>
                                             <li >
-                                                <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
+                                                <Link to='/myOrders' className='justify-between text-white text-xl lg:text-2xl'>My Orders</Link>
                                             </li>
                                         </>
                                     }
                                     {
                                         (admin) && <>
                                             <li>
-                                                <Link to='/addItems' className="justify-between text-white text-xl">Add Items</Link>
+                                                <Link to='/addItems' className="justify-between text-white text-xl lg:text-2xl">Add Items</Link>
                                             </li>
                                             <li >
-                                                <Link to='/myOrders' className='justify-between text-white text-xl'>My Orders</Link>
+                                                <Link to='/myOrders' className='justify-between text-white text-xl lg:text-2xl'>My Orders</Link>
                                             </li>
-                                            <li ><Link className='justify-between text-white text-xl' to='/users'>Manage User</Link></li>
-                                            <li ><Link className='justify-between text-white text-xl' to='/manageOrder'>Manage Orders</Link></li>
+                                            <li ><Link className='justify-between text-white text-xl lg:text-2xl' to='/users'>Manage User</Link></li>
+                                            <li ><Link className='justify-between text-white text-xl lg:text-2xl' to='/manageOrder'>Manage Orders</Link></li>
+                                            <li
+                                                onClick={handleSignOut}
+                                                className='btn btn-sm lg:btn-md btn-outline rounded-xl w-full mt-2'>
+
+                                                Sign out
+                                            </li>
                                         </>
                                     }
-                                    <li className=''>
-                                        <button
-                                            onClick={handleSignOut}
-                                            className='btn btn-sm btn-outline rounded-sm pb-2 mx-auto'>Sign out </button>
-                                    </li>
                                 </ul>
                             </div>
                             :
-                            <NavLink className='btn btn-secondary btn-outline rounded-sm btn-sm' to="/login">Login</NavLink>
+                            <NavLink className='btn btn-secondary btn-outline rounded-sm btn-sm md:btn-lg' to="/login">Login</NavLink>
                     }
                 </div>
             </div>
