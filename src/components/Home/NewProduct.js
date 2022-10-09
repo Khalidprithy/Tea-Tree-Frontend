@@ -29,7 +29,7 @@ const NewProduct = () => {
                         <div className="card-actions items-end justify-between">
                             <button
                                 onClick={handleToast}
-                                className="btn btn-sm btn-outline rounded-sm btn-secondary m-2 w-1/2">Excited</button>
+                                className="btn btn-sm lg:btn-md btn-outline rounded-lg btn-secondary m-2 w-8/12">Excited</button>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ const NewProduct = () => {
                         <div className="card-actions items-end justify-between">
                             <button
                                 onClick={handleToast}
-                                className="btn btn-sm btn-outline rounded-sm btn-secondary m-2 w-1/2">Excited</button>
+                                className="btn btn-sm lg:btn-md btn-outline rounded-lg btn-secondary m-2 w-8/12">Excited</button>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ const NewProduct = () => {
                         <div className="card-actions items-end justify-between">
                             <button
                                 onClick={handleToast}
-                                className="btn btn-sm btn-outline rounded-sm btn-secondary m-2 w-1/2">Excited</button>
+                                className="btn btn-sm lg:btn-md btn-outline rounded-lg btn-secondary m-2 w-8/12">Excited</button>
                         </div>
                     </div>
                 </div>
