@@ -8,17 +8,17 @@ const AllProducts = () => {
 
     return (
         <div className=' bg-white'>
-            <h1 className='text-2xl font-bold p-2'>All Products</h1>
+            <h1 className='text-2xl lg:text-5xl font-bold p-2 text-center lg:p-10'>All Products Details</h1>
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">
+                <table className="table w-11/12 mx-auto mb-10">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Min Order</th>
-                            <th>Action</th>
+                            <th className='text-base lg:text-2xl'>Name</th>
+                            <th className='text-base lg:text-2xl'>Description</th>
+                            <th className='text-base lg:text-2xl'>Quantity</th>
+                            <th className='text-base lg:text-2xl'>Price</th>
+                            <th className='text-base lg:text-2xl'>Min Order</th>
+                            <th className='text-base lg:text-2xl'>Action</th>
                         </tr>
                     </thead>
                     <tbody>
