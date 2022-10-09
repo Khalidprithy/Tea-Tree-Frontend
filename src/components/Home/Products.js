@@ -14,14 +14,14 @@ const Products = () => {
     return (
         <div className='bg-white pt-10'>
             <div className='flex items-center justify-between border rounded-2xl mx-6 outline outline-secondary mb-6'>
-                <h1 className='text-2xl md:text-4xl text-black text-center font-semibold p-6'>Our Products</h1>
+                <h1 className='text-2xl md:text-4xl lg:text-6xl text-black text-center font-semibold p-6'>Our Products</h1>
                 <div className="tooltip tooltip-secondary" data-tip="View All">
                     <button
                         onClick={handleAllProduct}
-                    ><BsFillArrowRightCircleFill className='text-4xl text-secondary mx-10'></BsFillArrowRightCircleFill></button>
+                    ><BsFillArrowRightCircleFill className='text-4xl md:text-6xl lg:text-7xl text-secondary mx-10'></BsFillArrowRightCircleFill></button>
                 </div>
             </div>
-            <div id='product' className='grid grid-cols-1 md:grid-cols-4 gap-4 mx-6'>
+            <div id='product' className='grid grid-cols-1 md:grid-cols-4 gap-4 mx-6 lg:mx-auto lg:w-10/12'>
                 {
                     products.slice(0, 8).map(product => <ShowProduct
                         key={product._id}
