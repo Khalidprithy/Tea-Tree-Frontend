@@ -8,7 +8,7 @@ import useAdmin from '../../hooks/useAdmin';
 
 const Navbar = () => {
 
-    const [user, setUser] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
 
     const handleSignOut = () => {
@@ -23,10 +23,10 @@ const Navbar = () => {
     }
 
     const menuItems = <>
-        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/'>Home</Link></li>
-        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/products'>Product</Link></li>
-        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/review'>Review</Link></li>
-        <li className='font-semibold text-neutral text-xl md:text-3xl lg:text-4xl'><Link to='/about'>About</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/'>Home</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/products'>Products</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/review'>Review</Link></li>
+        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/about'>About</Link></li>
     </>
 
     return (
@@ -104,7 +104,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                             :
-                            <NavLink className='btn btn-secondary btn-outline rounded-sm btn-sm md:btn-lg' to="/login">Login</NavLink>
+                            <NavLink className='btn btn-secondary btn-outline rounded-sm btn-sm md:btn-md' to="/login">Login</NavLink>
                     }
                 </div>
             </div>
