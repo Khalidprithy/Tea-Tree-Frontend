@@ -13,12 +13,12 @@ const AllProducts = () => {
                 <table className="table w-11/12 mx-auto mb-10">
                     <thead>
                         <tr>
-                            <th className='text-base lg:text-2xl'>Name</th>
-                            <th className='text-base lg:text-2xl'>Description</th>
-                            <th className='text-base lg:text-2xl'>Quantity</th>
-                            <th className='text-base lg:text-2xl'>Price</th>
-                            <th className='text-base lg:text-2xl'>Min Order</th>
-                            <th className='text-base lg:text-2xl'>Action</th>
+                            <th className='text-base lg:text-xl'>Name</th>
+                            <th className='text-base lg:text-xl'>Description</th>
+                            <th className='text-base lg:text-xl'>Quantity</th>
+                            <th className='text-base lg:text-xl'>Price</th>
+                            <th className='text-base lg:text-xl'>Min Order</th>
+                            <th className='text-base lg:text-xl'>Action</th>
                         </tr>
                     </thead>
                     <tbody>

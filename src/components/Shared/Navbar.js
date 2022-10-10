@@ -44,7 +44,7 @@ const Navbar = () => {
                     <Link to='/' className="p-2 ml-2 lg:ml-6 normal-case text-xl text-secondary"><img className='w-32 md:w-44 lg:w-56' src={logo1} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden md:flex lg:flex-auto">
-                    <ul className="menu menu-horizontal p-0 md:pr-8">
+                    <ul className="menu menu-horizontal p-0 md:pr-4">
                         {menuItems}
                     </ul>
                 </div>

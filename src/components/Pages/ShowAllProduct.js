@@ -17,12 +17,12 @@ const ShowAllProduct = ({ product }) => {
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-12 lg:w-20 h-12 lg:h-20">
+                        <div className="rounded-md w-12 lg:w-20 h-12 lg:h-20">
                             <img src={product.photo} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold text-base lg:text-3xl">{product.name}</div>
+                        <div className="font-bold text-base lg:text-2xl">{product.name}</div>
                         <div className="text-sm lg:text-xl opacity-50">{product.category}</div>
                     </div>
                 </div>
@@ -38,10 +38,10 @@ const ShowAllProduct = ({ product }) => {
             <th>
                 <button
                     onClick={() => handlePurchase(_id)}
-                    className="btn btn-outline btn-sm lg:btn-lg btn-secondary rounded-lg">Order</button>
+                    className="btn btn-outline btn-sm lg:btn-md btn-secondary rounded-lg">Order</button>
                 <button
                     onClick={() => handleReview(_id)}
-                    className="btn btn-sm lg:btn-lg btn-outline rounded-lg ml-1">Review</button>
+                    className="btn btn-sm lg:btn-md btn-outline rounded-lg ml-1">Review</button>
             </th>
         </tr>
     );

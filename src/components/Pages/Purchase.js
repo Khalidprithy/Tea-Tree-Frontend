@@ -80,7 +80,7 @@ const Purchase = () => {
                 <h1 className='text-xl md:text-3xl text-black text-center font-semibold p-6'>Purchase Information</h1>
             </div>
             <div>
-                <div className="hero min-h-screen">
+                <div className="hero">
                     <div className="hero-content flex-col md:flex-row p-0 pb-2">
                         <img className='w-64 md:w-72 lg:w-80 rounded-lg hover:scale-105 ease-in-out duration-500' src={product.photo} alt='' />
                         <div className='card-compact border rounded-lg p-3'>

@@ -60,11 +60,11 @@ const MyReviews = () => {
 
     return (
         <div className='pt-10'>
-            <h1 className='text-xl font-semibold text-center pb-4 px-4'>Please give us your valuable feedback of <span className='text-secondary'>{product.name}</span></h1>
-            <div className='flex justify-center items-center min-h-screen'>
+            <h1 className='text-2xl font-semibold text-center pb-4 px-2'>Please give us your valuable feedback of <span className='text-secondary'>{product.name}</span></h1>
+            <div className='flex justify-center items-center'>
                 <form onSubmit={handleReview}>
-                    <div className="card md:card-side p-2 max-w-lg border border-secondary">
-                        <figure><img className='w-64 rounded-lg' src={photo} alt="Shoes" /></figure>
+                    <div className="card md:card-side w-full p-2 border border-secondary">
+                        <figure><img className='w-72 md:w-72 rounded-lg' src={photo} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{name}</h2>
                             <p>{description}</p>
