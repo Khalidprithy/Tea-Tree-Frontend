@@ -71,7 +71,7 @@ const Purchase = () => {
 
     return (
         <div className='bg-white pt-4'>
-            <div className='flex items-center justify-between border rounded-2xl mx-6 outline outline-secondary mb-6'>
+            <div className='flex items-center justify-between border rounded-2xl mx-6 border-secondary mb-6'>
                 <div className="tooltip tooltip-secondary" data-tip="Go Back">
                     <button
                         onClick={handleGoBack}

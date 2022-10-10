@@ -36,12 +36,14 @@ const ShowAllProduct = ({ product }) => {
             <td className='text-base lg:text-2xl'> ${product.price}</td>
             <td><p className='text-base lg:text-2xl'>{product.minOrder}</p></td>
             <th>
-                <button
-                    onClick={() => handlePurchase(_id)}
-                    className="btn btn-outline btn-sm lg:btn-md btn-secondary rounded-lg">Order</button>
-                <button
-                    onClick={() => handleReview(_id)}
-                    className="btn btn-sm lg:btn-md btn-outline rounded-lg ml-1">Review</button>
+                <div className='flex items-center'>
+                    <button
+                        onClick={() => handlePurchase(_id)}
+                        className="btn btn-outline btn-sm lg:btn-md btn-secondary rounded-lg">Order</button>
+                    <button
+                        onClick={() => handleReview(_id)}
+                        className="btn btn-sm lg:btn-md btn-outline rounded-lg ml-1">Review</button>
+                </div>
             </th>
         </tr>
     );

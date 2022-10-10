@@ -74,7 +74,7 @@ const AddProduct = () => {
     return (
 
         <div className='bg-white'>
-            <div className='flex items-center justify-between border rounded-2xl mx-6 outline outline-secondary mb-6'>
+            <div className='flex items-center justify-between rounded-2xl mx-6 border border-secondary mb-6'>
                 <div className="tooltip tooltip-secondary" data-tip="Home">
                     <Link to='/'
                     ><AiOutlineHome className='text-4xl text-secondary mx-10'></AiOutlineHome></Link>
