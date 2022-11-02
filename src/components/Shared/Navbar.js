@@ -93,14 +93,14 @@ const Navbar = () => {
                                             </li>
                                             <li ><Link className='justify-between text-white text-xl lg:text-2xl' to='/users'>Manage User</Link></li>
                                             <li ><Link className='justify-between text-white text-xl lg:text-2xl' to='/manageOrder'>Manage Orders</Link></li>
-                                            <li
-                                                onClick={handleSignOut}
-                                                className='btn btn-sm lg:btn-md btn-outline rounded-xl w-full mt-2'>
-
-                                                Sign out
-                                            </li>
                                         </>
                                     }
+                                    <li
+                                        onClick={handleSignOut}
+                                        className='btn btn-sm lg:btn-md btn-outline rounded-xl w-full mt-2'>
+
+                                        Sign out
+                                    </li>
                                 </ul>
                             </div>
                             :

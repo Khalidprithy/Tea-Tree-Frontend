@@ -14,7 +14,6 @@ import AllProducts from './components/Pages/AllProducts';
 import Purchase from './components/Pages/Purchase';
 import MyReviews from './components/Pages/Dashboard/MyReviews';
 import MyOrder from './components/Pages/Dashboard/MyOrder';
-
 import RequireAdmin from './components/Shared/RequireAdmin'
 import Users from './components/Pages/Dashboard/Users';
 import MangeOrder from './components/Pages/Dashboard/ManageOrder';
@@ -26,7 +25,7 @@ import Blog from './components/Pages/Blog';
 function App() {
   return (
 
-    <div>
+    <div className='font-sans'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
