@@ -6,6 +6,11 @@ This is a ReactJS app
 [client](https://tea-tree-6ed1f.web.app/)
 [server](https://immense-savannah-21225.herokuapp.com/)
 
+## Admin Email & Password
+
+- Email: test12@admin.com
+- Password: test@admin12
+
 ## Documentation
 Warehouse Management Application for a tea manufacturing company built with React and Tailwind + DaizyUI for frontend and Nodejs ExpressJs for backend. I found this combination is flexible and productive. It also offers the flexibility to customize in future. 
 

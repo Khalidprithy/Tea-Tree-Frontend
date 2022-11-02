@@ -27,11 +27,9 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';
 
-    useEffect(() => {
-        if (token) {
-            navigate(from, { replace: true });
-        }
-    }, [token, from, navigate])
+    if (token) {
+        navigate(from, { replace: true });
+    }
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
