@@ -11,6 +11,7 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
 
+
     const handleSignOut = () => {
         signOut(auth)
         localStorage.removeItem('accessToken')
@@ -22,12 +23,13 @@ const Navbar = () => {
         // })
     }
 
-    const menuItems = <>
-        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/'>Home</Link></li>
-        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/products'>Products</Link></li>
-        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/review'>Review</Link></li>
-        <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/about'>About</Link></li>
-    </>
+    const menuItems =
+        <>
+            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/'>Home</Link></li>
+            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/products'>Products</Link></li>
+            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/review'>Review</Link></li>
+            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/about'>About</Link></li>
+        </>
 
     return (
         <div className='bg-white pb-6'>
