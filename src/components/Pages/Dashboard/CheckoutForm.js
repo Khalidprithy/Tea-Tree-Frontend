@@ -14,7 +14,7 @@ const CheckoutForm = ({ payment }) => {
     const { _id, price, user, email } = payment;
 
     useEffect(() => {
-        fetch(`https://immense-savannah-21225.herokuapp.com/create-payment-intent`, {
+        fetch(`https://teatree-server.onrender.com/create-payment-intent`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -79,7 +79,7 @@ const CheckoutForm = ({ payment }) => {
                 productId: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://immense-savannah-21225.herokuapp.com/purchase/${_id}`, {
+            fetch(`https://teatree-server.onrender.com/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

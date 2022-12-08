@@ -44,7 +44,7 @@ const AddProduct = () => {
                         photo: img
 
                     }
-                    fetch('https://immense-savannah-21225.herokuapp.com/products', {
+                    fetch('https://teatree-server.onrender.com/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

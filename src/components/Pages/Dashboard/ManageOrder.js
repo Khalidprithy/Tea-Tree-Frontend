@@ -9,7 +9,7 @@ const MangeOrder = () => {
     const [deleteProduct, setDeleteProduct] = useState(false);
 
 
-    const { data: allOrders, isLoading, refetch } = useQuery('allOrders', () => fetch('https://immense-savannah-21225.herokuapp.com/allOrder', {
+    const { data: allOrders, isLoading, refetch } = useQuery('allOrders', () => fetch('https://teatree-server.onrender.com/allOrder', {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }

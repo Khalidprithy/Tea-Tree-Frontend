@@ -5,7 +5,7 @@ const ConfirmDelete = ({ deleteProduct, refetch, setDeleteProduct }) => {
     const { name, email } = deleteProduct;
 
     const handleDelete = () => {
-        fetch(`https://immense-savannah-21225.herokuapp.com/purchase/${email}`, {
+        fetch(`https://teatree-server.onrender.com/purchase/${email}`, {
             method: 'DELETE',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

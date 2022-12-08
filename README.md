@@ -4,7 +4,7 @@ This is a ReactJS app
 
 ## 🔗 Links
 [client](https://tea-tree-6ed1f.web.app/)
-[server](https://immense-savannah-21225.herokuapp.com/)
+[server](https://teatree-server.onrender.com/)
 
 ## Admin Email & Password
 
