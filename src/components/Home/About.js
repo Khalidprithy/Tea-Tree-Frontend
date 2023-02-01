@@ -9,7 +9,7 @@ const About = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 pt-6'>
                 <div className='flex items-center justify-center'>
-                    <img className='w-10/12 lg:w-10/12 xl:w-8/12 rounded-xl' src={aboutImg} alt="" />
+                    <img className='w-10/12 md:w-8/12 lg:w-10/12 xl:w-8/12 rounded-xl' src={aboutImg} alt="" />
                 </div>
                 <div className='flex flex-col justify-center p-10 mx-auto'>
                     <h3 className='text-3xl xl:text-5xl font-semibold text-neutral'>About us</h3>
@@ -27,6 +27,7 @@ const About = () => {
                 </div>
             </div>
             <div className='mt-10'>
+                <h4 className='text-3xl text-center font-bold'>Business States</h4>
                 <section class="bg-white dark:bg-gray-900">
                     <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
                         <dl class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-4 dark:text-white">

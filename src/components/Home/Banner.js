@@ -27,11 +27,11 @@ const Banner = () => {
                     <img className='w-48 md:w-56 lg:w-72 xl:w-96' src={bannerImg} alt="" />
                 </div>
             </div>
-            <div className='bg-black rounded-2xl mx-6'>
+            <div className='bg-black rounded-xl mx-6'>
                 <div className='grid grid-cols-1 md:grid-cols-2 items-center '>
-                    <h1 className='text-3xl md:text-4xl xl:text-5xl text-white p-4 lg:p-8'>How green tea helps your body and mind?</h1>
+                    <h1 className='text-2xl md:text-4xl xl:text-5xl text-white p-4 lg:p-8'>How green tea helps your body and mind?</h1>
                     <div className='flex items-center justify-between'>
-                        <p className='text-gray-100 text-sm md:text-base xl:text-base w-60 lg:w-8/12 p-4'>Green tea improves metabolism, brain function, reduces stress and lowers risk of chronic diseases. It's a healthy drink for both body and mind.</p>
+                        <p className='text-gray-50 text-sm md:text-base xl:text-base w-60 md:w-10/12 lg:w-8/12 p-4'>Green tea improves metabolism, brain function, reduces stress and lowers risk of chronic diseases. It's a healthy drink for both body and mind.</p>
                         <Link to='/blog'><BsFillArrowRightCircleFill className='text-4xl lg:text-6xl text-accent hover:text-secondary mx-10'></BsFillArrowRightCircleFill></Link>
                     </div>
                 </div>
