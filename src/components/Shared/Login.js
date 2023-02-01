@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
 import toast from 'react-hot-toast';
+import { FaHome } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -57,24 +58,27 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-white">
+        <div className="hero min-h-screen bg-gradient-to-r from-gray-400 via-green-600 to-gray-400">
             <div className="hero-content flex-col md:flex-row-reverse">
                 <div>
-                    <div className="card w-80 bg-white border-2 rounded-md border-secondary">
+                    <div className="card w-80 lg:w-[500px] bg-white border-2 rounded-md border-secondary">
                         <div className="card-body">
+                            <Link to='/'>
+                                <FaHome className='text-5xl text-green-600 border-2 border-green-700 rounded-full p-2 hover:text-white hover:bg-green-500 transition ease-in duration-300' />
+                            </Link>
                             <h2 className="text-2xl m-2 font-bold text-center text-secondary">Login</h2>
                             <div className="flex items-center justify-between">
                                 <button
                                     onClick={() => signInWithGoogle()}
-                                    className="btn btn-outline btn-secondary rounded-sm  w-full"><FcGoogle className='mr-2'></FcGoogle>Google</button>
+                                    className="btn btn-outline btn-secondary rounded-md  w-full"><FcGoogle className='mr-2'></FcGoogle>Google</button>
                             </div>
                             <div className="divider text-neutral">OR</div>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="form-control w-full max-w-xs">
+                                <div className="form-control w-full">
                                     <input
                                         type="email"
                                         placeholder="Your Email"
-                                        className="input input-bordered w-full max-w-xs focus:outline-secondary"
+                                        className="input input-bordered w-full focus:outline-secondary"
                                         {...register("email", {
                                             required: {
                                                 value: true,
@@ -91,11 +95,11 @@ const Login = () => {
                                         {errors.email?.type === 'pattern' && <span className="label-text-alt text-error">{errors.email.message}</span>}
                                     </label>
                                 </div>
-                                <div className="form-control w-full max-w-xs">
+                                <div className="form-control w-full">
                                     <input
                                         type="password"
                                         placeholder="Your Password"
-                                        className="input input-bordered w-full max-w-xs focus:outline-secondary"
+                                        className="input input-bordered w-full focus:outline-secondary"
                                         {...register("password", {
                                             required: {
                                                 value: true,
@@ -116,7 +120,7 @@ const Login = () => {
 
                                 {errorMessage}
 
-                                <input className='btn btn-secondary btn-outline rounded-sm btn-md w-full test-white' type="submit" value='Login' />
+                                <input className='btn btn-secondary btn-outline rounded-md btn-md w-full test-white' type="submit" value='Login' />
                                 <div className='flex items-center justify-between'>
                                     <p className='text-start'>
                                         <button
@@ -126,7 +130,7 @@ const Login = () => {
                                 </div>
                             </form>
                             <div className='flex justify-center items-center'>
-                                <p className='text-neutral text-sm'>Doesn't have an account?<Link className='btn btn-link text-xs text-secondary' to='/signup'>Sign Up</Link> </p>
+                                <p className='text-neutral text-sm lg:text-base'>Doesn't have an account?<Link className='btn btn-link text-xs lg:text-base text-secondary' to='/signup'>Sign Up</Link> </p>
                             </div>
                         </div>
                     </div>

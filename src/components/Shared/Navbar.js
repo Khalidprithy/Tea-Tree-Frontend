@@ -106,7 +106,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                             :
-                            <NavLink className='btn btn-secondary btn-outline rounded-sm btn-sm md:btn-md' to="/login">Login</NavLink>
+                            <NavLink className='btn btn-secondary btn-outline rounded-md btn-sm md:btn-md' to="/login">Login</NavLink>
                     }
                 </div>
             </div>

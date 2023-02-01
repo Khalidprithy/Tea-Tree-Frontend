@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
@@ -23,10 +23,17 @@ import AboutPage from './components/Pages/AboutPage';
 import Blog from './components/Pages/Blog';
 
 function App() {
+
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/login';
+  const isSignUpPage = location.pathname === '/signup';
+
   return (
 
     <div className='font-sans'>
-      <Navbar></Navbar>
+
+      {!isLoginPage && !isSignUpPage ? <Navbar></Navbar> : null}
+
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/products' element={
@@ -67,7 +74,11 @@ function App() {
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+
+
+      {!isLoginPage && !isSignUpPage ? <Footer /> : null}
+
+      {/* Pop Up Notification */}
       <Toaster
         toastOptions={{
           success: {

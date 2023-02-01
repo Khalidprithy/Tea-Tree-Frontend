@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
 import toast from 'react-hot-toast';
+import { FaHome } from 'react-icons/fa';
 
 
 const SignUp = () => {
@@ -50,17 +51,19 @@ const SignUp = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-100">
+        <div className="hero min-h-screen bg-gradient-to-r from-gray-400 via-green-600 to-gray-400">
             <div className="hero-content flex-col md:flex-row">
-
                 <div>
-                    <div className="card w-80 border-2 rounded-md border-secondary">
+                    <div className="card w-80 lg:w-[500px] bg-white border-2 rounded-md border-secondary">
                         <div className="card-body">
-                            <h2 className="text-2xl m-2 font-bold text-center text-secondary">Sign Up</h2>
+                            <Link to='/'>
+                                <FaHome className='text-5xl text-green-600 border-2 border-green-700 rounded-full p-2 hover:text-white hover:bg-green-500 transition ease-in duration-300' />
+                            </Link>
+                            <h2 className="text-2xl mb-2 font-bold text-center text-secondary">Sign Up</h2>
                             <div className="flex items-center justify-between">
                                 <button
                                     onClick={() => signInWithGoogle()}
-                                    className="btn btn-outline btn-secondary rounded-sm w-full"><FcGoogle className='mr-2'></FcGoogle>Google</button>
+                                    className="btn btn-outline btn-secondary rounded-md w-full"><FcGoogle className='mr-2'></FcGoogle>Google</button>
                                 {/* <button
                                     onClick={() => signInWithGoogle()}
                                     className="btn border-white hover:border-white text-black hover:text-white bg-white hover:bg-accent"><GrFacebook className='mr-2 text-blue-500'></GrFacebook>Facebook</button> */}
@@ -68,11 +71,11 @@ const SignUp = () => {
 
                             <div className="divider text-neutral">OR</div>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="form-control w-full max-w-xs">
+                                <div className="form-control w-full">
                                     <input
                                         type="text"
                                         placeholder="Your Name"
-                                        className="input input-bordered w-full max-w-xs focus:outline-secondary"
+                                        className="input input-bordered w-full focus:outline-secondary"
                                         {...register("name", {
                                             required: {
                                                 value: true,
@@ -84,11 +87,11 @@ const SignUp = () => {
                                         {errors.name?.type === 'required' && <span className="label-text-alt text-orange-500">{errors.name.message}</span>}
                                     </label>
                                 </div>
-                                <div className="form-control w-full max-w-xs">
+                                <div className="form-control w-full">
                                     <input
                                         type="email"
                                         placeholder="Your Email"
-                                        className="input input-bordered w-full max-w-xs focus:outline-secondary"
+                                        className="input input-bordered w-full focus:outline-secondary"
                                         {...register("email", {
                                             required: {
                                                 value: true,
@@ -105,11 +108,11 @@ const SignUp = () => {
                                         {errors.email?.type === 'pattern' && <span className="label-text-alt text-orange-500">{errors.email.message}</span>}
                                     </label>
                                 </div>
-                                <div className="form-control w-full max-w-xs">
+                                <div className="form-control w-full">
                                     <input
                                         type="password"
                                         placeholder="Your Password"
-                                        className="input input-bordered w-full max-w-xs focus:outline-secondary"
+                                        className="input input-bordered w-full focus:outline-secondary"
                                         {...register("password", {
                                             required: {
                                                 value: true,
@@ -136,10 +139,10 @@ const SignUp = () => {
                                 </div>
                                 <input
                                     disabled={!agree}
-                                    className='btn btn-secondary btn-outline rounded-sm btn-md w-full mt-2' type="submit" value='Sign Up' />
+                                    className='btn btn-secondary btn-outline rounded-md btn-md w-full mt-2' type="submit" value='Sign Up' />
                             </form>
                             <div className='flex items-center'>
-                                <p className='text-neutral'>Already have an account?<Link className='btn btn-link text-xs text-secondary' to='/login'>Login</Link> </p>
+                                <p className='text-neutral text-base'>Already have an account?<Link className='btn btn-link text-xs lg:text-base text-secondary' to='/login'>Login</Link> </p>
                             </div>
                         </div>
                     </div>
