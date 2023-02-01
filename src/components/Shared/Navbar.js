@@ -27,16 +27,16 @@ const Navbar = () => {
 
     const menuItems =
         <>
-            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'home' ? 'text-green-500' : ''
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-2xl xl:text-3xl ${activeItem === 'home' ? 'text-green-500' : ''
                 }`}
                 onClick={() => setActiveItem('home')}><Link to='/'>Home</Link></li>
-            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'products' ? 'text-green-500' : ''
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-2xl xl:text-3xl ${activeItem === 'products' ? 'text-green-500' : ''
                 }`}
                 onClick={() => setActiveItem('products')}><Link to='/products'>Products</Link></li>
-            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'review' ? 'text-green-500' : ''
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-2xl xl:text-3xl ${activeItem === 'review' ? 'text-green-500' : ''
                 }`}
                 onClick={() => setActiveItem('review')}><Link to='/review'>Review</Link></li>
-            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'about' ? 'text-green-500' : ''
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-2xl xl:text-3xl ${activeItem === 'about' ? 'text-green-500' : ''
                 }`}
                 onClick={() => setActiveItem('about')}><Link to='/about'>About</Link></li>
         </>
@@ -76,7 +76,7 @@ const Navbar = () => {
                                         }
                                     </div>
                                 </label>
-                                <ul tabIndex="0" className="menu menu-normal dropdown-content mt-3 p-2 lg:p-4 shadow bg-secondary rounded-lg w-52 lg:w-64">
+                                <ul tabIndex="0" className="menu menu-normal dropdown-content mt-3 p-2 lg:p-4 shadow bg-secondary rounded-lg w-52 md:w-56 lg:w-64">
                                     <li>
                                         <Link to='/profile' className="justify-between text-white">
                                             {
@@ -87,9 +87,7 @@ const Navbar = () => {
                                             }
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link to='/myItems' className="justify-between text-white text-xl lg:text-2xl">My Items</Link>
-                                    </li>
+
                                     {
                                         (user && !admin) && <>
                                             <li >
@@ -107,12 +105,14 @@ const Navbar = () => {
                                             </li>
                                             <li ><Link className='justify-between text-white text-xl lg:text-2xl' to='/users'>Manage User</Link></li>
                                             <li ><Link className='justify-between text-white text-xl lg:text-2xl' to='/manageOrder'>Manage Orders</Link></li>
+                                            <li>
+                                                <Link to='/manageReview' className="justify-between text-white text-xl lg:text-2xl">Manage Reviews</Link>
+                                            </li>
                                         </>
                                     }
                                     <li
                                         onClick={handleSignOut}
                                         className='btn btn-sm lg:btn-md btn-outline rounded-lg w-full mt-2'>
-
                                         Sign out
                                     </li>
                                 </ul>

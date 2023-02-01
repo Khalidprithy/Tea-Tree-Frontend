@@ -32,7 +32,7 @@ const Banner = () => {
                     <h1 className='text-2xl md:text-4xl xl:text-5xl text-white p-4 lg:p-8'>How green tea helps your body and mind?</h1>
                     <div className='flex items-center justify-between'>
                         <p className='text-gray-50 text-sm md:text-base xl:text-base w-60 md:w-10/12 lg:w-8/12 p-4'>Green tea improves metabolism, brain function, reduces stress and lowers risk of chronic diseases. It's a healthy drink for both body and mind.</p>
-                        <Link to='/blog'><BsFillArrowRightCircleFill className='text-4xl lg:text-6xl text-accent hover:text-secondary mx-10'></BsFillArrowRightCircleFill></Link>
+                        <Link to='/blog'><BsFillArrowRightCircleFill className='text-4xl lg:text-6xl text-gray-50 hover:text-secondary mx-10'></BsFillArrowRightCircleFill></Link>
                     </div>
                 </div>
             </div>

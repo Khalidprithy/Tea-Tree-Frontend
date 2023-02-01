@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
 const useReview = () => {
-    const [reviews, setReviews] = useState([]);
 
-    useEffect(() => {
-        fetch('https://teatree-server.onrender.com/reviews')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
-    return [reviews, setReviews];
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch(`https://teatree-server.onrender.com/reviews`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(res => res.json()));
+
+    return [reviews, refetch, isLoading];
 
 }
 

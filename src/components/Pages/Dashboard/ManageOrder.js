@@ -35,7 +35,7 @@ const MangeOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            allOrders.map((order, index) => <OrderRow
+                            allOrders?.map((order, index) => <OrderRow
                                 key={order._id}
                                 index={index}
                                 order={order}

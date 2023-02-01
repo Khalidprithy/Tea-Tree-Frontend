@@ -7,6 +7,8 @@ import { FaHandPointRight } from 'react-icons/fa';
 
 const Reviews = () => {
     const [reviews] = useReview();
+
+
     return (
         <div className='bg-white'>
             <div>

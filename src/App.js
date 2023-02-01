@@ -21,6 +21,7 @@ import Payment from './components/Pages/Dashboard/Payment'
 import Reviews from './components/Pages/Reviews';
 import AboutPage from './components/Pages/AboutPage';
 import Blog from './components/Pages/Blog';
+import ManageReviews from './components/Pages/Dashboard/ManageReviews';
 
 function App() {
 
@@ -70,7 +71,8 @@ function App() {
           </RequireAuth>} />
         <Route path='payment/:id' element={<Payment></Payment>}></Route>
         <Route path='/users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
-        <Route path='manageOrder' element={<RequireAdmin><MangeOrder></MangeOrder></RequireAdmin>}></Route>
+        <Route path='/manageOrder' element={<RequireAdmin><MangeOrder></MangeOrder></RequireAdmin>}></Route>
+        <Route path='/manageReview' element={<RequireAdmin><ManageReviews></ManageReviews></RequireAdmin>}></Route>
 
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
