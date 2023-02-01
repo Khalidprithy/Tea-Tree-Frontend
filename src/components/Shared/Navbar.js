@@ -5,9 +5,11 @@ import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import logo1 from '../../images/Logo1.png'
 import useAdmin from '../../hooks/useAdmin';
+import { useState } from 'react';
 
 const Navbar = () => {
 
+    const [activeItem, setActiveItem] = useState('/');
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
 
@@ -25,13 +27,23 @@ const Navbar = () => {
 
     const menuItems =
         <>
-            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/'>Home</Link></li>
-            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/products'>Products</Link></li>
-            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/review'>Review</Link></li>
-            <li className='font-semibold text-neutral text-xl md:text-2xl lg:text-3xl'><Link to='/about'>About</Link></li>
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'home' ? 'text-green-500' : ''
+                }`}
+                onClick={() => setActiveItem('home')}><Link to='/'>Home</Link></li>
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'products' ? 'text-green-500' : ''
+                }`}
+                onClick={() => setActiveItem('products')}><Link to='/products'>Products</Link></li>
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'review' ? 'text-green-500' : ''
+                }`}
+                onClick={() => setActiveItem('review')}><Link to='/review'>Review</Link></li>
+            <li className={`font-semibold text-neutral text-xl md:text-2xl lg:text-3xl ${activeItem === 'about' ? 'text-green-500' : ''
+                }`}
+                onClick={() => setActiveItem('about')}><Link to='/about'>About</Link></li>
         </>
 
+
     return (
+
         <div className='bg-white pb-6'>
             <div className="navbar bg-white">
                 <div className="navbar-start flex-1">
@@ -39,14 +51,14 @@ const Navbar = () => {
                         <label tabIndex="0" className="btn btn-ghost md:hidden lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex="1" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-48">
+                        <ul tabIndex="1" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-48 hover:bg-none">
                             {menuItems}
                         </ul>
                     </div>
                     <Link to='/' className="p-2 ml-2 lg:ml-6 normal-case text-xl text-secondary"><img className='w-32 md:w-44 lg:w-56' src={logo1} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden md:flex lg:flex-auto">
-                    <ul className="menu menu-horizontal p-0 md:pr-4">
+                    <ul className="menu menu-horizontal p-0 md:pr-4 hover:bg-none">
                         {menuItems}
                     </ul>
                 </div>
@@ -111,6 +123,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
