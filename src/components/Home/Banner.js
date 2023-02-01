@@ -8,22 +8,23 @@ const Banner = () => {
     return (
         <div className='bg-white'>
             <div className='grid grid-cols-1 md:grid-cols-2 pt-6'>
-                <div className='flex flex-col justify-center p-10 mx-auto w-full lg:w-8/12'>
-                    <h1 className='text-5xl md:text-6xl font-semibold text-neutral'>Organic Green Tea</h1>
-                    <p className='mt-2 text-sm md:text-xl lg:text-xl text-gray-500'>The steaming process creates a unique flavor profile that can be described as sweet, vegetal or seaweed-like. The Japanese style of green tea is characterized by steaming</p>
+                <div className='flex flex-col justify-center p-10 mx-auto w-full lg:w-10/12 order-2 md:order-1'>
+                    <h2 className='text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-neutral'>TeaTree - <br /> The Finest Teas</h2>
+                    <h4 className='text-base lg:text-lg font-medium text-green-500'>Experience the richness of nature in every sip</h4>
+                    <p className='mt-2 text-sm md:text-base lg:text-xl text-gray-700'> At TeaTree, we hand-pick only the finest tea leaves and blend them with natural ingredients to create unique and delicious teas. From classic black teas to herbal blends, we have something for every tea lover.</p>
                     <div className='flex justify-start gap-4 mt-4'>
-                        <Link to='/products' className='btn btn-md md:btn-lg btn-outline rounded-sm'>Explore more</Link>
+                        <Link to='/products' className='btn btn-md btn-outline rounded-md'>Learn More</Link>
                         <a
                             href='#product'
-                            className='btn md:btn-lg  btn-secondary rounded-sm'>Buy Now</a>
+                            className='btn btn-md btn-secondary rounded-md'>Shop Now</a>
                     </div>
                     <div className='flex items-center mt-6'>
                         <button><SiGooglechat className='text-3xl md:text-5xl text-secondary m-2'></SiGooglechat></button>
-                        <p className='text-xs md:text-base'>Chat with our business manager. We are always open for any kind of business discussion</p>
+                        <p className='text-xs md:text-base'>Get quick and helpful support with our chat option. Chat with us anytime for all your tea-related questions and concerns.</p>
                     </div>
                 </div>
-                <div className='flex items-center justify-center'>
-                    <img className='w-48 md:w-56 lg:w-64 xl:w-96' src={bannerImg} alt="" />
+                <div className='flex items-center justify-center order-1'>
+                    <img className='w-48 md:w-56 lg:w-72 xl:w-96' src={bannerImg} alt="" />
                 </div>
             </div>
             <div className='bg-black rounded-2xl mx-6'>
