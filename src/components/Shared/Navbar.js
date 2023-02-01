@@ -76,7 +76,7 @@ const Navbar = () => {
                                         }
                                     </div>
                                 </label>
-                                <ul tabIndex="0" className="menu menu-normal dropdown-content mt-3 p-2 lg:p-4 shadow bg-secondary rounded-box w-52 lg:w-64">
+                                <ul tabIndex="0" className="menu menu-normal dropdown-content mt-3 p-2 lg:p-4 shadow bg-secondary rounded-lg w-52 lg:w-64">
                                     <li>
                                         <Link to='/profile' className="justify-between text-white">
                                             {
@@ -111,7 +111,7 @@ const Navbar = () => {
                                     }
                                     <li
                                         onClick={handleSignOut}
-                                        className='btn btn-sm lg:btn-md btn-outline rounded-xl w-full mt-2'>
+                                        className='btn btn-sm lg:btn-md btn-outline rounded-lg w-full mt-2'>
 
                                         Sign out
                                     </li>

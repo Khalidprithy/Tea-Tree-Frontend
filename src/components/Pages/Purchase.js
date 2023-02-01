@@ -17,7 +17,7 @@ const Purchase = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, []);
+    }, [id]);
 
     const { _id, category, name, price, brand, description, photo, minOrder } = product;
 
@@ -40,7 +40,6 @@ const Purchase = () => {
             phone: event.target.phone.value,
             address: event.target.address.value,
         }
-
 
         fetch('https://teatree-server.onrender.com/purchase', {
             method: 'POST',
@@ -83,7 +82,7 @@ const Purchase = () => {
                 <div className="hero">
                     <div className="hero-content flex-col md:flex-row p-0 pb-2">
                         <img className='w-64 md:w-72 lg:w-80 rounded-lg hover:scale-105 ease-in-out duration-500' src={product.photo} alt='' />
-                        <div className='card-compact border rounded-lg p-3'>
+                        <div className='card-compact rounded-lg p-3'>
                             <form onSubmit={handlePurchase}>
                                 <h1 className="text-3xl font-bold">{product.name}</h1>
                                 <div className='flex flex-col'>
@@ -92,17 +91,17 @@ const Purchase = () => {
                                     <p><span className='font-bold'>Category:</span> {product.category}</p>
                                     <p><span className='font-bold'>Price:</span> {product.price}</p>
                                     <p><span className='font-bold'>Quantity:</span> {product.quantity}</p>
-                                    <p><span className='font-bold'>Minimum Order:</span> {product.minOrder}</p>
+                                    <p><span className='font-bold'>Minimum Order:</span> {minOrder}</p>
                                     <h4 className='text-xl font-bold text-center'>Purchase Information</h4>
                                 </div>
-                                <div className='flex flex-col md:flex-row items-center justify-around gap-2'>
+                                <div className='flex flex-col md:flex-row items-center gap-2'>
                                     <div className='flex flex-col'>
                                         <label className='text-left ml-1 mb-2 font-semibold'>User Name</label>
-                                        <input type="text" name='userName' value={user?.displayName} className="input input-sm input-bordered mb-2 w-full max-w-lg" readOnly />
+                                        <input type="text" name='userName' value={user?.displayName} className="input input-sm input-bordered mb-2 w-full rounded-md" readOnly />
                                     </div>
                                     <div className='flex flex-col'>
                                         <label className='text-left ml-1 mb-2 font-semibold'>User Email</label>
-                                        <input type="email" name='email' value={user?.email} className="input input-sm input-bordered mb-2 w-full max-w-lg" readOnly />
+                                        <input type="email" name='email' value={user?.email} className="input input-sm input-bordered mb-2 w-full rounded-md" readOnly />
                                     </div>
                                 </div>
                                 <div className='flex items-center justify-between gap-2'>
@@ -111,8 +110,8 @@ const Purchase = () => {
                                         min={product.minOrder} max={product.quantity} className="mb-1 p-2 rounded-md border-2 hover:border-secondary w-24" required />
                                     <input type="text" name='phone' placeholder='Phone number' className="mb-1 p-2 rounded-md border-2 hover:border-secondary w-48 md:w-56" />
                                 </div>
-                                <input type="text" name='address' placeholder='Enter your address' className="mb-3 p-2 rounded-md border-2 hover:border-secondary w-full" />
-                                <input type="submit" value='Purchase' className='btn btn-md btn-outline btn-secondary w-full rounded-sm' />
+                                <textarea type="text" name='address' placeholder='Enter your address' className="mb-3 p-2 rounded-md border-2 hover:border-secondary w-full" required />
+                                <input type="submit" value='Purchase' className='btn btn-md btn-outline btn-secondary w-full rounded-md' />
                             </form>
                             <Toaster />
                         </div>
@@ -120,8 +119,6 @@ const Purchase = () => {
                 </div>
             </div >
         </div >
-
-
     );
 };
 

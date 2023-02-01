@@ -14,7 +14,7 @@ const ShowProduct = ({ product }) => {
     }
 
     return (
-        <div className="card card-compact h-full bg-white outline-none hover:outline-secondary shadow-none hover:shadow-xl rounded-md py-2">
+        <div className="card card-compact h-full bg-white shadow-none hover:shadow-xl hover:scale-105 rounded-md py-2 transition ease-in duration-200">
             <figure><img className='w-40 md:w-44 xl:w-52' src={product.photo} alt="Shoes" /></figure>
             <div className="flex flex-col items-center">
                 <h2 className="text-xl md:text-2xl xl:text-3xl font-bold">{product.name}</h2>
@@ -26,10 +26,10 @@ const ShowProduct = ({ product }) => {
                 <div className="flex items-center justify-between gap-4">
                     <button
                         onClick={() => handleOrder(_id)}
-                        className="btn btn-sm md:btn-md xl:btn-md rounded-lg btn-secondary btn-outline mt-2 md:mb-2">Order</button>
+                        className="btn btn-sm md:btn-md xl:btn-md rounded-lg btn-secondary btn-outline mt-2 md:mb-2 transition ease-in delay-75 duration-200">Order</button>
                     <button
                         onClick={() => handleReview(_id)}
-                        className="btn btn-sm md:btn-md xl:btn-md rounded-lg btn-outline mt-2 md:mb-2">Review</button>
+                        className="btn btn-sm md:btn-md xl:btn-md rounded-lg btn-outline mt-2 md:mb-2 transition ease-in delay-75 duration-300">Review</button>
                 </div>
             </div>
         </div>

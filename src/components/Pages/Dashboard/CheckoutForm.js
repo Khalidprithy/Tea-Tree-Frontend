@@ -94,7 +94,6 @@ const CheckoutForm = ({ payment }) => {
 
     }
 
-
     return (
         <form onSubmit={handleSubmit}>
             <CardElement

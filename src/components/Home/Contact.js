@@ -24,8 +24,8 @@ const Contact = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 bg-white pt-10'>
             <div className='bg-white pb-6 w-11/12 lg:w-8/12 mx-auto'>
                 <div className='p-10'>
-                    <h1 className='text-2xl md:text-4xl xl:text-6xl font-semibold'>Let's get in touch</h1>
-                    <p className='text-base lg:text-2xl p-2'>We'er open for any suggestions or just to have a chat.</p>
+                    <h1 className='text-2xl md:text-4xl xl:text-5xl font-semibold'>Let's get in touch</h1>
+                    <p className='text-base lg:text-xl p-2'>We'er open for any suggestions or just to have a chat.</p>
                 </div>
                 <div className='flex flex-col gap-4 pl-8'>
                     <div className='flex items-center gap-2'>
@@ -54,7 +54,7 @@ const Contact = () => {
                         <div className='flex flex-col my-2'>
                             <textarea className='rounded-md px-3 mt-1 h-24' placeholder='Message' name="message" />
                         </div>
-                        <input className='btn btn-sm lg:btn-lg btn-outline text-white rounded-lg mb-2' type="submit" value="Send message" />
+                        <input className='btn btn-sm lg:btn-md btn-outline text-white rounded-lg mb-2' type="submit" value="Send message" />
                     </form>
                 </div>
             </div>

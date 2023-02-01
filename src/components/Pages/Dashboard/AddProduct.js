@@ -109,8 +109,8 @@ const AddProduct = () => {
                                 <input className='mb-3 p-2 rounded-md border-2 hover:border-secondary' placeholder='Minimum Order' type="number" {...register("minOrder", { min: 1, max: 1000 })} required />
                             </div>
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
-                                <div className="mb-3 p-2 rounded-md border-2 hover:border-secondary">
-                                    <select className="select select-sm w-full border-secondary" {...register("category")}>
+                                <div className="mb-3 p-1 rounded-md border-2 hover:border-secondary">
+                                    <select className="select select-sm w-full border-secondary h-12" {...register("category")}>
                                         <option selected>Organic</option>
                                         <option>Green Tea</option>
                                         <option>Black Tea</option>
@@ -122,7 +122,7 @@ const AddProduct = () => {
                             </div>
                             <textarea className='mb-3 p-2 rounded-md border-2 hover:border-secondary' placeholder='Description' {...register("description")} />
 
-                            <input className='btn btn-md btn-outline rounded-sm' type="submit" value='Add Product' />
+                            <input className='btn btn-md btn-outline rounded-md' type="submit" value='Add Product' />
                         </div>
                     </form>
                 </div>
