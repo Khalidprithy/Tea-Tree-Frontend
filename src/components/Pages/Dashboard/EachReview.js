@@ -6,7 +6,7 @@ const EachReview = ({ review, refetch }) => {
     const handleDeleteReview = () => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-            const url = `http://localhost:5000/reviews/${review._id}`
+            const url = `https://teatree-server.onrender.com/reviews/${review._id}`
             fetch(url, {
                 method: "DELETE"
             })
