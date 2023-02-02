@@ -30,7 +30,7 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <User
+                            users?.map((user, index) => <User
                                 key={user._id}
                                 user={user}
                                 index={index}
